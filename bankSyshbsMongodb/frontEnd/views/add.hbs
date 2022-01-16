@@ -1,11 +1,11 @@
 {{>header}}
 {{>navbar}}
-<section class="container my-3">
-    <h2>Edit User Data</h2>
-   
-   
-
-    <form method="post">
+  <section class="container my-4">
+        <div class="mb-3">
+            <a href="/" class="btn btn-primary">Back to All Customers Page</a>
+        </div>
+        <form method="post">
+            
             <div class="btn-3">
                 <label>Name</label>
                 <input name="name" class="form-control"  value="{{user.name}}">
@@ -41,11 +41,9 @@
              {{#if errors.initialBalance}}
                 <div class="text-danger"><span>{{errors.initialBalance}}</span></div>
             {{/if}}
-        <div class="mb-3">
-            <button class="btn btn-primary my-3">Edit Data</button>
-        </div>
-    </form>
-   
-   
-</section>
+            <div class="btn-3 pt-3">
+                <button class="btn btn-primary">Add</button>
+            </div>
+        </form>
+    </section>
 {{>footer}}

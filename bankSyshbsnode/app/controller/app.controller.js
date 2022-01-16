@@ -66,14 +66,13 @@ class User {
         const id = req.params.id
         const data = readFromJSON();
      let  userIndex= this.searchUserByID(id,data);
-     if(userIndex==-1){isNotFound=true;isEmptyTrans=true;}
-     if(data[userIndex].transactions.length==0)isEmptyTrans=true;
+     if(userIndex==-1){res.redirect('/err404');}
+     //if(data[userIndex].transactions.length==0)res.redirect('/err404');
      //console.log(isEmptyTrans);
      res.render("single", {
         pageTitle: "User Details",
-        user: data[userIndex],
-        isNotFound,
-        isEmptyTrans
+        user: data[userIndex]
+        
     })
    
       
