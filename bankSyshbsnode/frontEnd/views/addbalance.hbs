@@ -1,0 +1,21 @@
+ {{>header}}
+ {{>navbar}}
+  <section class="container my-4">
+        <div class="mb-3">
+            <a href="/" class="btn btn-primary">Back to All customers Page</a>
+        </div>
+        <form method='post'>
+            <!-- name, gender, email, married(true, false) -->
+            <div class="btn-3">
+                <label>Amount</label>
+                <input name="amount" class="form-control" value='{{transaction.amount}}'>
+            </div>
+            {{#if errors.amount}}
+                <div class="text-danger"><span>{{errors.amount}}</span></div>
+            {{/if}}
+            <div class="btn-3 pt-3">
+                <button class="btn btn-primary" id='addpalance'>AddPalance</button>
+            </div>
+        </form>
+    </section>
+    {{>footer}}

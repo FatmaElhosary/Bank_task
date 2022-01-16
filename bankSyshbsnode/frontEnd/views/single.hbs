@@ -1,0 +1,73 @@
+{{>header}}
+{{>navbar}}
+
+
+ <section class="container my-4">
+        <div class="mb-3">
+            <a href="/" class="btn btn-primary">Back to All Customers Page</a>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>address</th>
+                    <th>phone</th>
+                    <th>accountNumber</th>
+                    <th>initialpalance</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody >
+              {{#if isEmpty}}
+                <tr>
+                    <td colspan="7" class="bg-danger text-white text-center ">No Customers Yet</td>
+                </tr>
+                {{else}}
+ <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                      <td>{{user.address}}</td>
+                        <td>{{user.phone}}</td>
+                          <td>{{user.accountNumber}}</td>
+                         <td>{{user.initialBalance}}</td>
+
+                    <td>                  
+                        <a class="btn btn-warning" href="/addBalance/{{user.id}}">AddBalance</a>
+                        <a class="btn btn-danger " href="/withdraw/{{user.id}}">withdraw</a>
+                         <a class="btn btn-info " href="/edit/{{user.id}}">Edit</a>
+                    </td>
+                </tr>
+
+                {{/if}}
+
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                   <th>id</th>
+                    <th>transactionType</th>
+                    <th>Amount</th>
+                
+                </tr>
+            </thead>
+            <tbody >
+               {{#if isEmptyTrans}}
+                <tr>
+                    <td colspan="3" class="bg-danger text-white text-center ">No Transactions Yet</td>
+                </tr>
+                {{else}}
+                {{#each user.transactions}}
+                    <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.type}}</td>
+                    <td>{{this.val}}</td>
+                    </tr>
+                    {{/each}}
+
+{{/if}}
+            </tbody>
+        </table>
+    </section>
+{{>footer}}

@@ -1,0 +1,53 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <h2>Edit User Data</h2>
+    {{#if isNotFound}}
+    <div class="alert alert-danger">
+        user not found
+    </div>
+    {{else}}
+
+    <form method="post">
+            <div class="btn-3">
+                <label>Name</label>
+                <input name="name" class="form-control"  value="{{user.name}}">
+            </div>
+            {{#if errors.name}}
+                <div class="text-danger"><span>{{errors.name}}</span></div>
+            {{/if}}
+            <div class="btn-3">
+                <label>Address</label>
+                <input name="address" class="form-control" value="{{user.address}}">
+            </div>
+              {{#if errors.address}}
+                <div class="text-danger"><span>{{errors.address}}</span></div>
+            {{/if}}
+            <div class="btn-3">
+                <label>Phone</label>
+                <input name="phone" class="form-control" value="{{user.phone}}">
+            </div>
+             {{#if errors.phone}}
+                <div class="text-danger"><span>{{errors.phone}}</span></div>
+            {{/if}}
+            <div class="btn-3">
+                <label>AccountNumber</label>
+                <input name="accountNumber" class="form-control" value='{{user.accountNumber}}'>
+            </div>
+             {{#if errors.accountNumber}}
+                <div class="text-danger"><span>{{errors.accountNumber}}</span></div>
+            {{/if}}
+            <div class="btn-3">
+                <label>InitialBalance</label>
+                <input name="initialBalance" class="form-control" value='{{user.initialBalance}}'>
+            </div>
+             {{#if errors.initialBalance}}
+                <div class="text-danger"><span>{{errors.initialBalance}}</span></div>
+            {{/if}}
+        <div class="mb-3">
+            <button class="btn btn-primary my-3">Edit Data</button>
+        </div>
+    </form>
+    {{/if}}
+</section>
+{{>footer}}
