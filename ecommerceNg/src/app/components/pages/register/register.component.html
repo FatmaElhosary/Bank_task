@@ -1,0 +1,20 @@
+{{register.value|json}}
+<div class="row justify-content-center ">
+ <!--  <div class="alert alert-danger" *ngIf="msg!=''">{{msg}}</div> -->
+<form class="col-md-6 col-12 text-center border border-3 border-primary rounded p-4" #register="ngForm" (ngSubmit)="handleForm(register)">
+  <input type="text" name="name" placeholder="Enter your name"  class="form-control my-3" ngModel #name="ngModel" required minlength="3">
+  <div class="mt-2 alert alert-danger "  *ngIf="name.invalid && (name.touched||register.submitted)">
+<p *ngIf="name.errors?.['required']">name is required</p>
+<p *ngIf="name.errors?.['minlength']">name minlength is 3 </p>
+  </div>
+  <input type="number" name="phone"  ngModel #phone="ngModel"  class="form-control my-3" placeholder="Enter your phone">
+  <select name="gender" id="" ngModel  #gender="ngModel" class="form-control my-3"  required>
+    <option value="male">Male</option>
+    <option value="female">Female </option>
+  </select>
+  <input type="text" name="email"  ngModel #email="ngModel" email  class="form-control my-3" placeholder="Enter Your Email">
+  <input type="text" name="password"  ngModel #password="ngModel" required minlength="6"  class="form-control my-3" placeholder="Enter your password">
+  <button class="btn btn-primary">sign up</button>
+</form>
+
+</div>

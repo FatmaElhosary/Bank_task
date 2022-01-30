@@ -1,0 +1,7 @@
+  <img class="card-img-top" [src]="product.imges[0]" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">{{product.price}}</p>
+    <a routerLink="/product/{{product._id}}" class="btn btn-primary">See Product</a>
+  </div>
+

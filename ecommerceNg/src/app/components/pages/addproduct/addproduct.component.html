@@ -1,0 +1,37 @@
+
+<div class="row justify-content-center ">
+  <h2>Add Product</h2>
+ <!--  <div class="alert alert-danger" *ngIf="msg!=''">{{msg}}</div> -->
+<form [formGroup]="addProduct" class="col-md-6 col-12 text-center border border-3 border-primary rounded p-4"  (ngSubmit)="handleproduct()">
+  <div class="mb-3">
+  <input type="text" name="name" placeholder="Enter product name"  class="form-control my-3" formControlName="name">
+  <div *ngIf="name?.invalid">
+    {{name?.errors|json}}
+   </div>
+   </div>
+   <input type="text" name="description" placeholder="Enter product desc"  class="form-control my-3" formControlName="description">
+   <div *ngIf="description?.invalid">
+    {{description?.errors|json}}
+   </div>
+   <input type="text" name="price" placeholder="Enter product price"  class="form-control my-3" formControlName="price">
+   <div *ngIf="price?.invalid">
+    {{price?.errors|json}}
+   </div>
+  <select type="text" name="category" class="form-control my-3" formControlName="catId">
+  <option value="61e94d2e94792ba57dd1722e">furniture</option>
+  <option value="61e94d2e94792ba57dd1722e">home</option>
+  <option value="61e94d2e94792ba57dd1722e">children</option>
+  </select>
+  <div *ngIf="catId?.invalid">
+    {{catId?.errors|json}}
+   </div>
+   <input type="text" name="address" placeholder="Enter product address"  class="form-control my-3" formControlName="address">
+   <input type="text" name="phone" placeholder="Enter contact phone"  class="form-control my-3" formControlName="phone">
+   <div *ngIf="phone?.invalid">
+    {{phone?.errors|json}}
+   </div>
+  <button class="btn btn-primary">Add</button>
+</form>
+
+</div>
+

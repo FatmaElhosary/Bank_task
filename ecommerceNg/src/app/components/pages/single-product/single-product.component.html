@@ -1,0 +1,12 @@
+
+<div *ngIf="isloaded">
+<div *ngFor="let img of product.imges">
+  <img class="card-img-top" src="" alt="Card image cap">
+</div>
+<div class="card-body">
+  <h5 class="card-title">{{product.name}}</h5>
+  <p class="card-text">{{product.price}}</p>
+  <p class="card-text">{{product.address}}</p>
+  <p class="card-text">{{product.phone}}</p>
+</div>
+</div>
